@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Design System - Clean, Professional, Sophisticated */
+
+@layer base {
+  :root {
+    /* Modern Color Palette - Sophisticated Blues and Grays */
+    --background: 0 0% 99%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Primary - Professional Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Gray */
+    --secondary: 214 32% 96%;
+    --secondary-foreground: 215 25% 15%;
+
+    --muted: 214 32% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 95%;
+    --accent-foreground: 217 91% 60%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 8px;
+
+    /* Extended Color System */
+    --brand-primary: 217 91% 60%;
+    --brand-primary-dark: 217 91% 55%;
+    --brand-secondary: 215 25% 15%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 199 89% 48%;
+    
+    /* Neutral Scale - Modern Grays */
+    --neutral-50: 214 32% 98%;
+    --neutral-100: 214 32% 96%;
+    --neutral-200: 214 32% 91%;
+    --neutral-300: 214 16% 65%;
+    --neutral-400: 214 16% 47%;
+    --neutral-500: 215 25% 27%;
+    --neutral-600: 215 25% 15%;
+    --neutral-700: 215 28% 12%;
+    --neutral-800: 215 32% 9%;
+    --neutral-900: 215 39% 7%;
+    
+    /* Sidebar Colors */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 215 25% 15%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 91% 95%;
+    --sidebar-accent-foreground: 217 91% 60%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
+    
+    /* Clean Design Elements */
+    --shadow-subtle: 0 1px 2px 0 hsl(var(--neutral-200) / 0.05);
+    --shadow-card: 0 1px 3px 0 hsl(var(--neutral-200) / 0.1);
+    --border-radius: 8px;
+  }
+
+  .dark {
+    --background: 215 39% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 215 32% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 215 32% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 28% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 28% 12%;
+    --muted-foreground: 214 16% 65%;
+
+    --accent: 215 28% 12%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 28% 12%;
+    --input: 215 28% 12%;
+    --ring: 217 91% 60%;
+    
+    --sidebar-background: 215 32% 9%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 28% 12%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 215 28% 12%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Typography System */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+  
+  h1 { @apply text-3xl leading-tight; }
+  h2 { @apply text-2xl leading-tight; }
+  h3 { @apply text-xl leading-snug; }
+  h4 { @apply text-lg leading-snug; }
+  h5 { @apply text-base leading-normal; }
+  h6 { @apply text-sm leading-normal; }
+  
+  /* Modern Card Styles */
+  .card-modern {
+    @apply bg-card border border-border rounded-lg;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:border-border/60;
+  }
+  
+  /* Clean Button Styles */
+  .btn-clean {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors;
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+    @apply disabled:pointer-events-none disabled:opacity-50;
+  }
+  
+  /* Sidebar Transitions */
+  .sidebar-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Icon Sizing */
+  .icon-sm { @apply w-4 h-4; }
+  .icon-md { @apply w-5 h-5; }
+  .icon-lg { @apply w-6 h-6; }
+}
+
+@layer components {
+  /* Modern Stat Card */
+  .stat-card {
+    @apply card-modern p-6 space-y-3 card-hover;
+  }
+  
+  .stat-card-title {
+    @apply text-sm font-medium text-muted-foreground;
+  }
+  
+  .stat-card-value {
+    @apply text-2xl font-bold text-foreground;
+  }
+  
+  .stat-card-change {
+    @apply text-xs font-medium;
+  }
+  
+  /* Modern Table Styles */
+  .table-modern {
+    @apply w-full border-collapse;
+  }
+  
+  .table-modern th {
+    @apply h-12 px-4 text-left align-middle font-medium text-muted-foreground;
+    @apply border-b border-border bg-muted/30;
+  }
+  
+  .table-modern td {
+    @apply p-4 align-middle border-b border-border/50;
+  }
+  
+  .table-modern tr:hover {
+    @apply bg-muted/30;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar-nav-item {
+    @apply flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md;
+    @apply transition-colors hover:bg-accent hover:text-accent-foreground;
+  }
+  
+  .sidebar-nav-item.active {
+    @apply bg-primary text-primary-foreground;
+  }
+  
+  .sidebar-nav-item.collapsed {
+    @apply justify-center px-2;
+  }
+  
+  /* Page Header */
+  .page-header {
+    @apply flex items-center justify-between pb-6 border-b border-border/60;
+  }
+  
+  .page-title {
+    @apply text-2xl font-bold text-foreground;
+  }
+  
+  .page-description {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+}
